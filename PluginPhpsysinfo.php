@@ -11,9 +11,9 @@ class PluginPhpsysinfo extends SnapinPlugin
     function getVariables()
     {
         $variables = array(
-            /*T*/'Plugin Name'/*/T*/       => array(
+            lang('Plugin Name')       => array(
                 'type'        => 'hidden',
-                'description' => /*T*/''/*/T*/,
+                'description' => '',
                 'value'       => 'Server Info',
             ),
             'Public Name'       => array(
@@ -21,7 +21,7 @@ class PluginPhpsysinfo extends SnapinPlugin
                 'description' => 'Name to be seen if viewing from public portal',
                 'value'       => 'Server Stats',
             ),
-            /*T*/"PublicOnly"/*/T*/ => array (
+            lang("PublicOnly") => array (
                 "type"          =>"hidden",
                 "value"         =>true
             ),
