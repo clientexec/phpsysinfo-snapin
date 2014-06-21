@@ -144,7 +144,7 @@ class PluginPhpsysinfo extends SnapinPlugin
         require_once 'library/CE/XmlFunctions.php';
         require_once 'library/CE/NE_Network.php';
 
-        $xmldata = NE_Network::curlRequest($this->settings, $statsurl, false, false, true, true);
+        $xmldata = NE_Network::curlRequest($this->settings, $statsurl, false, false, true, false);
 
         if (is_a($xmldata, 'NE_Error')) return $xmldata;
 
