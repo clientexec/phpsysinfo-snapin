@@ -6,7 +6,14 @@ class PluginPhpsysinfo extends SnapinPlugin
 {
     public $title = 'Server Stats';
     public $phpsysinfo_ver = "old";
-    protected $featureSet = 'products';
+
+    public function init()
+    {
+        $this->settingsNotes = lang('When enabled this snapin allows your customers to see server information.');
+        $this->addMappingForPublicMain("view", "View Server Details", 'Integrate PHPSysInfo in Public Home', 'icon-sitemap', 'margin: 2px;');
+        $this->addMappingForTopMenu('public', '', 'view', 'Server Info', 'Integrate PHPSysInfo in Public Top Menu');
+    }
+
 
     function getVariables()
     {
@@ -15,15 +22,6 @@ class PluginPhpsysinfo extends SnapinPlugin
                 'type'        => 'hidden',
                 'description' => '',
                 'value'       => 'Server Info',
-            ),
-            'Public Name'       => array(
-                'type'        => 'hidden',
-                'description' => 'Name to be seen if viewing from public portal',
-                'value'       => 'Server Stats',
-            ),
-            lang("PublicOnly") => array (
-                "type"          =>"hidden",
-                "value"         =>true
             ),
             'Public Description'       => array(
                 'type'        => 'hidden',
@@ -45,6 +43,8 @@ class PluginPhpsysinfo extends SnapinPlugin
         return $variables;
     }
 
+
+
     function view()
     {
         if (isset($_GET['pluginaction'])) {
@@ -60,7 +60,7 @@ class PluginPhpsysinfo extends SnapinPlugin
 
         $this->showServerDropDown();
 
-        return $this->view->render('phpsysinfo.phtml');
+        return $this->view->render('view.phtml');
     }
 
     function showServerDropDown()
