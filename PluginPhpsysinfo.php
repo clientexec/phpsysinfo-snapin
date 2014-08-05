@@ -59,6 +59,7 @@ class PluginPhpsysinfo extends SnapinPlugin
         }
 
         $this->showServerDropDown();
+        return $this->view->render('view.phtml');
     }
 
     function showServerDropDown()
