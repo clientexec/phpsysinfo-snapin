@@ -7,7 +7,7 @@
 <select name="servers" onchange=jumpMenu('self',this,0);>
 	<option VALUE="0">-- <?php echo $this->user->lang('Select A Server'); ?> --</option>
 	<?php foreach ( $this->servers as $server) { ?>
-	<option <?php echo $server['selected']; ?> value="index.php?fuse=admin&view=<?php echo $server['view']; ?>&plugin=phpsysinfo&pluginaction=showserver&serverid=<?php echo $server['id']; ?>&controller=snapins"><?php echo $server['name']; ?></option>
+	<option <?php echo $server['selected']; ?> value="index.php?fuse=admin&view=<?php echo $server['view']; ?>&plugin=phpsysinfo&pluginaction=showserver&serverid=<?php echo $server['id']; ?>&controller=snapins&v=view"><?php echo $server['name']; ?></option>
 	<?php  } ?>
 </select>
 
